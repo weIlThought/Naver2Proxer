@@ -5,7 +5,7 @@
 // @include     https://proxer.me/chapter/*
 // @supportURL  https://proxer.me/forum/283/384751
 // @updateURL   https://github.com/dravorle/Naver2Proxer/raw/master/Naver2Proxer.user.js
-// @version     1.5.5: Moved all Scripts into one because Firefox is sad
+// @version     1.5.6: Fixed error when loading next chapter
 // @require     https://proxer.me/templates/proxer14/js/jquery-1.9.1.min.js
 // @require     https://proxer.me/templates/proxer14/js/jquery-ui-1.10.3.custom.min.js
 // @require     https://proxer.me/templates/proxer14/js/jquery.plugins.js?3
@@ -18,7 +18,7 @@
 // ==/UserScript==
 
 var MaxPages, CurrPages;
-var version = "v1.5.5";
+var version = "v1.5.6";
 
 run();
 
@@ -633,7 +633,7 @@ function thisChap() {
 function nextChap() {
     $("#wrapper").css("max-width", "");
     //ajaxProxerRequest(nextChapter);
-    window.location = nextChapter + "#top";
+    window.location = "https://proxer.me" + nextChapter + "#top";
 }
 
 function nextPageLong() {
